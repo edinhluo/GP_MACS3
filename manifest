@@ -1,10 +1,10 @@
 #MACS3
-#Tue Oct 19 23:17:39 GMT 2021
+#Wed Oct 20 00:41:27 GMT 2021
 JVMLevel=
-LSID=urn\:lsid\:8080.root.098064d75c58.098064d75c58\:genepatternmodules\:8\:30
+LSID=urn\:lsid\:8080.root.098064d75c58.098064d75c58\:genepatternmodules\:8\:32
 author=
 categories=beta
-commandLine=macs3 callpeak <Treatment> <Control> <Format> --buffer-size\="1000000"
+commandLine=macs3 callpeak <Treatment> <Control> <TagSize> <Format> --buffer-size\=<Buffer>
 cpuType=any
 description=
 documentationUrl=
