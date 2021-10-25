@@ -1,14 +1,17 @@
-Error Summary - October 14, 2021
+Error Summary - October 25, 2021
 
-MACS3 was tested on the local version of GenePattern with the added Dockerfile, Manifest, and input data, where the BAM file containing "ChIP" is the input treatment file and "CTRL" is the optional control file.
+MACS3 was tested on the local and beta version of GenePattern with the added Dockerfile, Manifest, and input data, where the BAM file containing "ChIP" is the input treatment file and "CTRL" is the optional control file.
 
 1. Conflicting Optional Args
-    On the local GenePattern, when parameters are marked as "Optional", they are still read as "Required" Parameters when trying to run the module.
-    To resolve "Optional" parameters, default values are set. This overrides MACS3 module from automatically determining parameters (such as tag size) when there is no parameter.
-    Some conflicts with MACS3 running as some optional parameters cannot be run at the same time.
+    On the local and beta GenePattern, when parameters are marked as "Optional", they are still read as "Required" Parameters when trying to run the module.
+    To resolve "Optional" parameters, "default" values are set to allow the module to run. This overrides MACS3 module from automatically determining parameters (such as tag size) when there is no parameter.
+    Some conflicts with MACS3 running as some optional parameters cannot be run at the same time, such as q- and p-value, broad and call summits.
 
-2. Input Test File Data led to Parameter Errors
-    Due to some optional paramters conflicting, I started the input data with just the required argument. Each time it was ran, an error would pop up requiring an optional parameter to avoid the error.
-    Treatment, Control, Format, and TagSize were the optional parameters I was able to add through this step-by-step process based on Error Messages output by MACS3.
-    Stopped at the error occurring in line 70 of callpeak_cmd.py "(treat,control) = load_tag_files_options (options)" where it is not know which parameter is needed to continue, as "options" denotes all parameters.
-    Error printed: "struct.error: unpack requires a buffer of 4 bytes"
+2. Non-Default Args
+    Non-default args needed for MACS3 module to run are Tag Size (101) and Outdir (any string).
+    Outdir has not been configured yet so any string is fine.
+    Optional Flags are set on to test their functionality with the files, including --nolambda, --nomodel, --broad, and -B.
+
+3. Misc Areas
+    A wrapper script is being worked on to allow optional flags to be turned on or off via the GP module.
+    The current GP module only allows one ChIP file to be read, where the MACS3 module allows multiple files to be read. A wrapper script to unpack these files from GP is being worked on.
