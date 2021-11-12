@@ -1,10 +1,10 @@
 #MACS3
-#Fri Nov 12 08:02:06 GMT 2021
+#Fri Nov 12 08:29:38 GMT 2021
 JVMLevel=
-LSID=urn\:lsid\:8080.root.098064d75c58.098064d75c58\:genepatternmodules\:8\:84
+LSID=urn\:lsid\:8080.root.098064d75c58.098064d75c58\:genepatternmodules\:8\:86
 author=
 categories=beta
-commandLine=python3 <libdir>macs_wrapper.py <Treatment> <Control> <ExpName> <Format> <GenomeSize> <TagSize> <pValue> <qValue> <BedGraph> --minlength\=<MinLength> --maxgap\=<MaxGap> --nolambda\=<NoLambda> --slocal\=<SmallLocal> --llocal\=<LargeLocal> --nomodel\=<NoModel> --extsize\=<ExtendSize> --shift\=<Shift> --keepdup\=<KeepDuplicates> --broad\=<BroadRegion> --broadcutoff\=<BroadCutoff> --scaleto\=<Scale> --outdir\=<OutDir> --callsummits\=<Summits> --buffersize\=<Buffer>
+commandLine=python3 <libdir>macs_wrapper.py <Treatment> <Control> <ExpName> <Format> <GenomeSize> <TagSize> <pValue> <qValue> <BedGraph> --minlength\=<MinLength> --maxgap\=<MaxGap> --nolambda\=<NoLambda> --slocal\=<SmallLocal> --llocal\=<LargeLocal> --nomodel\=<NoModel> --extsize\=<ExtendSize> --shift\=<Shift> --keepdup\=<KeepDuplicates> --broad\=<BroadRegion> --broadcutoff\=<BroadCutoff> --scaleto\=<Scale> --outdir\=<OutDir> --callsummits\=<Summits> --buffersize\=<Buffer> --seed\=<Seed>
 cpuType=any
 description=
 documentationUrl=
@@ -221,6 +221,19 @@ p24_prefix=
 p24_prefix_when_specified=
 p24_type=java.lang.Integer
 p24_value=
+p25_MODE=
+p25_TYPE=Integer
+p25_default_value=0
+p25_description=Sets the random seed while sampling data
+p25_fileFormat=
+p25_flag=
+p25_name=Seed
+p25_numValues=0..1
+p25_optional=
+p25_prefix=
+p25_prefix_when_specified=
+p25_type=java.lang.Integer
+p25_value=
 p2_MODE=IN
 p2_TYPE=FILE
 p2_default_value=
